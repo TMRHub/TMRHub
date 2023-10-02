@@ -63,7 +63,7 @@ $(document).ready(() => {
         if ($('#rank').val() == "")
             $('#rank-err').text('The input can not be empty!');
         else
-            $.post('http://fs-10system/rank', JSON.stringify({ rank: $('#rank').val() }));
+            $.post('http://tmr-10system/rank', JSON.stringify({ rank: $('#rank').val() }));
     });
 
 
@@ -122,7 +122,7 @@ function toggle() {
     close = !close;
     $(".range-bar").prop('disabled', close);
     if (close) $('.active-players').slideUp();
-    $.post('http://fs-10system/ToggleOpen', JSON.stringify({ toggle: close }))
+    $.post('http://tmr-10system/ToggleOpen', JSON.stringify({ toggle: close }))
 }
 
 function Close() {
@@ -147,7 +147,7 @@ function SendData(code) {
         code: code
     }
     $('.inputs-id #err-text').text("");
-    $.post('http://fs-10system/action', JSON.stringify({ data: data }))
+    $.post('http://tmr-10system/action', JSON.stringify({ data: data }))
 }
 
 function ChangeBackGround(val) {
@@ -184,7 +184,7 @@ function CloseEvent() {
     $('.warrper').hide();
     $("#action-text").text("");
     $('.settings-container').slideUp();
-    $.post('http://fs-10system/close', JSON.stringify({}));
+    $.post('http://tmr-10system/close', JSON.stringify({}));
 }
 
 function SwitchPages() {
